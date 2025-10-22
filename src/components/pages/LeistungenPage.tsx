@@ -147,9 +147,9 @@ export default function LeistungenPage({ onNavigate }: LeistungenPageProps) {
             <Button
               size="lg"
               variant="outline"
-              onClick={() => window.location.href = 'tel:+49123456789'}
+              onClick={() => window.location.href = 'tel:+4972318002999'}
             >
-              Anrufen: +49 123 456789
+              Anrufen: +49 7231 8002999
             </Button>
           </div>
         </div>

@@ -8,6 +8,7 @@ import { Textarea } from '@/components/ui/textarea'
 import { toast } from 'sonner'
 import { Envelope, Phone, MapPin, Clock } from '@phosphor-icons/react'
 import { ContactMessage } from '@/types'
+import logoVaritec from '@/assets/logo_varitec.jpg'
 
 export default function KontaktPage() {
   const [messages, setMessages] = useKV<ContactMessage[]>('contact-messages', [])
@@ -53,11 +54,9 @@ export default function KontaktPage() {
     <div>
       <section className="bg-primary text-primary-foreground py-16 md:py-24">
         <div className="container mx-auto px-4 md:px-8 lg:px-16 text-center">
-          <h1 className="text-4xl md:text-5xl font-bold mb-6 tracking-tight">
-            Kontakt & Anfahrt
-          </h1>
-          <p className="text-lg md:text-xl max-w-3xl mx-auto opacity-95">
-            Wir sind für dich da! Schreib uns eine Nachricht oder ruf einfach an.
+          <h1 className="text-3xl md:text-4xl font-bold mb-4">Kontakt</h1>
+          <p className="text-lg md:text-xl text-primary-foreground/80 max-w-xl mx-auto">
+            Sie haben Fragen oder möchten einen Termin vereinbaren? Schreiben Sie uns oder rufen Sie an – wir sind gerne für Sie da!
           </p>
         </div>
       </section>
@@ -82,7 +81,7 @@ export default function KontaktPage() {
                         type="text"
                         value={name}
                         onChange={(e) => setName(e.target.value)}
-                        placeholder="Max Mustermann"
+                        placeholder=""
                         className="mt-2"
                         required
                       />
@@ -95,7 +94,7 @@ export default function KontaktPage() {
                         type="email"
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
-                        placeholder="max@example.com"
+                        placeholder=""
                         className="mt-2"
                         required
                       />
@@ -108,18 +107,18 @@ export default function KontaktPage() {
                         type="tel"
                         value={phone}
                         onChange={(e) => setPhone(e.target.value)}
-                        placeholder="+49 123 456789"
+                        placeholder=""
                         className="mt-2"
                       />
                     </div>
 
                     <div>
-                      <Label htmlFor="message">Deine Nachricht *</Label>
+                      <Label htmlFor="message">Ihre Nachricht *</Label>
                       <Textarea
                         id="message"
                         value={message}
                         onChange={(e) => setMessage(e.target.value)}
-                        placeholder="Wie können wir dir helfen?"
+                        placeholder="Wie können wir ihnen helfen?"
                         rows={6}
                         className="mt-2"
                         required
@@ -156,10 +155,10 @@ export default function KontaktPage() {
                     <div>
                       <h4 className="font-semibold mb-1">Telefon</h4>
                       <a
-                        href="tel:+49123456789"
+                        href="tel:+4972318002999"
                         className="text-accent hover:underline"
                       >
-                        +49 123 456789
+                        +0 7231 8002999
                       </a>
                     </div>
                   </div>
@@ -171,23 +170,23 @@ export default function KontaktPage() {
                     <div>
                       <h4 className="font-semibold mb-1">E-Mail</h4>
                       <a
-                        href="mailto:info@varitec.de"
+                        href="mailto:info@varitec-kfz.de"
                         className="text-accent hover:underline"
                       >
-                        info@varitec.de
+                        info@varitec-kfz.de
                       </a>
                     </div>
                   </div>
 
                   <div className="flex items-start gap-4">
                     <div className="w-10 h-10 bg-accent/10 rounded-lg flex items-center justify-center flex-shrink-0">
-                      <MapPin size={24} className="text-accent" weight="bold" />
+                      <img src={logoVaritec} alt="Varitec Logo" className="w-8 h-8 object-contain" />
                     </div>
                     <div>
                       <h4 className="font-semibold mb-1">Adresse</h4>
                       <p className="text-muted-foreground">
-                        Musterstraße 123<br />
-                        12345 Musterstadt
+                        Turnstraße 32/1<br />
+                        75228 Ispringen
                       </p>
                     </div>
                   </div>
@@ -199,8 +198,9 @@ export default function KontaktPage() {
                     <div>
                       <h4 className="font-semibold mb-1">Öffnungszeiten</h4>
                       <div className="text-muted-foreground space-y-1">
-                        <p>Montag - Freitag: 08:00 - 18:00</p>
-                        <p>Samstag: 09:00 - 13:00</p>
+                        <p>Montag - Donnerstag: 07:30 bis 12:00 und 13:00 bis 17:30</p>
+                        <p>Freitag: 07:30 bis 12:00 und 13:00 bis 17:00</p>
+                        <p>Samstag: Nach Vereinbarung</p>
                         <p>Sonntag: Geschlossen</p>
                       </div>
                     </div>
@@ -211,15 +211,24 @@ export default function KontaktPage() {
               <Card className="bg-muted">
                 <CardContent className="p-6">
                   <h3 className="font-semibold mb-3">Anfahrt</h3>
-                  <div className="aspect-video bg-background rounded-lg flex items-center justify-center text-muted-foreground mb-4">
-                    <MapPin size={48} weight="duotone" />
+                  <div className="aspect-video bg-background rounded-lg flex items-center justify-center text-muted-foreground mb-4 overflow-hidden">
+                    <iframe
+                      title="Google Maps - Varitec Auto Werkstatt"
+                      src="https://www.google.com/maps?q=Turnstraße+32/1,+75228+Ispringen&output=embed"
+                      width="100%"
+                      height="100%"
+                      style={{ border: 0 }}
+                      allowFullScreen
+                      loading="lazy"
+                      referrerPolicy="no-referrer-when-downgrade"
+                      className="w-full h-full rounded-lg"
+                    />
                   </div>
                   <p className="text-sm text-muted-foreground">
-                    <strong>Mit dem Auto:</strong> Direkt an der B123, Ausfahrt Musterstadt-Ost. 
-                    Kostenlose Parkplätze vor Ort.
+                    <strong>Mit dem Auto:</strong> Turnstraße 32/1 - 75228 Ispringen.
                   </p>
                   <p className="text-sm text-muted-foreground mt-2">
-                    <strong>Öffentlich:</strong> Buslinien 45 und 67, Haltestelle &quot;Gewerbepark&quot; 
+                    <strong>Öffentlich:</strong> Bahn S5, Haltestelle &quot;Ispringen&quot;
                     (3 Minuten Fußweg).
                   </p>
                 </CardContent>

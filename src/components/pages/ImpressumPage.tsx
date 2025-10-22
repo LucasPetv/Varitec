@@ -1,8 +1,11 @@
+import logoVaritec from '@/assets/logo_varitec.jpg'
+
 export default function ImpressumPage() {
   return (
     <div>
       <section className="bg-primary text-primary-foreground py-16 md:py-24">
         <div className="container mx-auto px-4 md:px-8 lg:px-16 text-center">
+          <img src={logoVaritec} alt="Varitec Logo" className="mx-auto mb-6 w-32 h-auto rounded-lg shadow-md" />
           <h1 className="text-4xl md:text-5xl font-bold mb-6 tracking-tight">
             Impressum
           </h1>
@@ -15,8 +18,8 @@ export default function ImpressumPage() {
             <h2 className="text-2xl font-bold mb-4">Angaben gemäß § 5 TMG</h2>
             <p className="mb-6">
               Varitec Kfz-Werkstatt GmbH<br />
-              Musterstraße 123<br />
-              12345 Musterstadt
+              Turnstraße 32/1<br />
+              75228 Ispringen
             </p>
 
             <h3 className="text-xl font-bold mb-3 mt-8">Vertreten durch</h3>
@@ -26,7 +29,7 @@ export default function ImpressumPage() {
 
             <h3 className="text-xl font-bold mb-3 mt-8">Kontakt</h3>
             <p className="mb-6">
-              Telefon: +49 123 456789<br />
+              Telefon: +49 7231 8002999<br />
               E-Mail: info@varitec.de
             </p>
 
@@ -52,16 +55,16 @@ export default function ImpressumPage() {
 
             <h3 className="text-xl font-bold mb-3 mt-8">Zuständige Aufsichtsbehörde</h3>
             <p className="mb-6">
-              Handwerkskammer Musterstadt<br />
-              Musterweg 1<br />
-              12345 Musterstadt
+              Handwerkskammer Pforzheim<br />
+              Turnstraße 32/1<br />
+              75228 Ispringen
             </p>
 
             <h3 className="text-xl font-bold mb-3 mt-8">Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV</h3>
             <p className="mb-6">
               Michael Schneider<br />
-              Musterstraße 123<br />
-              12345 Musterstadt
+              Turnstraße 32/1<br />
+              75228 Ispringen
             </p>
 
             <h3 className="text-xl font-bold mb-3 mt-8">EU-Streitschlichtung</h3>

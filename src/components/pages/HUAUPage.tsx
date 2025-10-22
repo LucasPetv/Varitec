@@ -32,29 +32,6 @@ export default function HUAUPage({ onNavigate }: HUAUPageProps) {
     }
   ]
 
-  const benefits = [
-    {
-      title: 'Zertifizierte Partner',
-      description: 'Wir arbeiten mit TÜV, DEKRA und GTÜ zusammen',
-      icon: CheckCircle
-    },
-    {
-      title: 'Faire Preise',
-      description: 'Transparente Kosten ohne versteckte Gebühren',
-      icon: CheckCircle
-    },
-    {
-      title: 'Schnelle Termine',
-      description: 'Meist kurzfristige Terminvergabe möglich',
-      icon: CheckCircle
-    },
-    {
-      title: 'Alles vor Ort',
-      description: 'Mängelbehebung direkt in unserer Werkstatt',
-      icon: CheckCircle
-    }
-  ]
-
   const checklist = [
     'Beleuchtung und Elektrik',
     'Bremsenanlage',
@@ -64,6 +41,13 @@ export default function HUAUPage({ onNavigate }: HUAUPageProps) {
     'Umweltbelastung (Abgase)',
     'Sicherheitseinrichtungen',
     'Kennzeichen und Plaketten'
+  ]
+
+  const benefits = [
+    { title: 'Zertifizierte Partner', icon: CheckCircle },
+    { title: 'Faire Preise', icon: CheckCircle },
+    { title: 'Schnelle Termine', icon: CheckCircle },
+    { title: 'Alles vor Ort', icon: CheckCircle }
   ]
 
   return (
@@ -141,7 +125,6 @@ export default function HUAUPage({ onNavigate }: HUAUPageProps) {
                     <benefit.icon size={28} className="text-accent" weight="bold" />
                   </div>
                   <h3 className="font-semibold mb-2">{benefit.title}</h3>
-                  <p className="text-sm text-muted-foreground">{benefit.description}</p>
                 </CardContent>
               </Card>
             ))}

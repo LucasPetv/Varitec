@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { Button } from '@/components/ui/button'
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet'
 import { List, X, Phone } from '@phosphor-icons/react'
+import logoVaritec from '@/assets/logo_varitec.jpg'
 
 type Page = 'home' | 'leistungen' | 'tuv-termin' | 'team' | 'kontakt' | 'reifenservice' | 'hu-au' | 'impressum' | 'datenschutz'
 
@@ -35,9 +36,9 @@ export default function Navbar({ currentPage, onNavigate }: NavbarProps) {
         <div className="flex h-16 items-center justify-between">
           <button
             onClick={() => handleNavigate('home')}
-            className="text-2xl font-bold text-primary hover:text-accent transition-colors"
+            className="flex items-center gap-3"
           >
-            Varitec
+            <img src={logoVaritec} alt="Varitec Logo" className="h-10 w-auto rounded shadow" />
           </button>
 
           <div className="hidden md:flex items-center gap-6">
@@ -57,7 +58,7 @@ export default function Navbar({ currentPage, onNavigate }: NavbarProps) {
             <Button
               size="sm"
               className="gap-2"
-              onClick={() => window.location.href = 'tel:+49123456789'}
+              onClick={() => window.location.href = 'tel:+4972318002999'}
             >
               <Phone weight="bold" />
               Anrufen
@@ -85,7 +86,7 @@ export default function Navbar({ currentPage, onNavigate }: NavbarProps) {
                 ))}
                 <Button
                   className="gap-2 mt-4"
-                  onClick={() => window.location.href = 'tel:+49123456789'}
+                  onClick={() => window.location.href = 'tel:+4972318002999'}
                 >
                   <Phone weight="bold" />
                   Jetzt anrufen

@@ -37,7 +37,6 @@ export default function TUVTerminPage() {
     'PKW',
     'Transporter',
     'Wohnmobil',
-    'Motorrad',
     'Anhänger'
   ]
 
@@ -113,12 +112,13 @@ export default function TUVTerminPage() {
                       <Label htmlFor="date" className="text-base font-semibold mb-3 block">
                         Wunschdatum *
                       </Label>
-                      <Calendar
-                        mode="single"
-                        selected={date}
-                        onSelect={setDate}
-                        disabled={(date) => date < today || date.getDay() === 0}
-                        className="rounded-md border w-fit"
+                      <Input
+                        id="date"
+                        type="date"
+                        value={date ? date.toISOString().substring(0, 10) : ''}
+                        onChange={(e) => setDate(new Date(e.target.value))}
+                        className="mt-2"
+                        required
                       />
                     </div>
 
@@ -126,18 +126,14 @@ export default function TUVTerminPage() {
                       <Label htmlFor="time" className="text-base font-semibold">
                         Wunschuhrzeit *
                       </Label>
-                      <Select value={time} onValueChange={setTime}>
-                        <SelectTrigger id="time" className="mt-2">
-                          <SelectValue placeholder="Uhrzeit wählen" />
-                        </SelectTrigger>
-                        <SelectContent>
-                          {timeSlots.map((slot) => (
-                            <SelectItem key={slot} value={slot}>
-                              {slot} Uhr
-                            </SelectItem>
-                          ))}
-                        </SelectContent>
-                      </Select>
+                      <Input
+                        id="time"
+                        type="time"
+                        value={time}
+                        onChange={(e) => setTime(e.target.value)}
+                        className="mt-2"
+                        required
+                      />
                     </div>
 
                     <div>
@@ -194,7 +190,7 @@ export default function TUVTerminPage() {
                             type="tel"
                             value={phone}
                             onChange={(e) => setPhone(e.target.value)}
-                            placeholder="+49 123 456789"
+                            placeholder="+49 7231 8002999"
                             className="mt-2"
                           />
                         </div>
@@ -274,9 +270,9 @@ export default function TUVTerminPage() {
                   <Button
                     variant="secondary"
                     className="w-full"
-                    onClick={() => window.location.href = 'tel:+49123456789'}
+                    onClick={() => window.location.href = 'tel:+4972318002999'}
                   >
-                    +49 123 456789
+                    +49 7231 8002999
                   </Button>
                 </CardContent>
               </Card>

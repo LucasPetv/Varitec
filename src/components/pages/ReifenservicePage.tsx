@@ -32,11 +32,6 @@ export default function ReifenservicePage({ onNavigate }: ReifenservicePageProps
       price: 'ab 49,90 €'
     },
     {
-      title: 'Einlagerung',
-      description: 'Sichere Lagerung deiner Reifen in unserem klimatisierten Lager',
-      price: 'ab 39,90 € / Saison'
-    },
-    {
       title: 'Reifenverkauf',
       description: 'Große Auswahl an Markenreifen zu fairen Preisen',
       price: 'auf Anfrage'
@@ -61,7 +56,7 @@ export default function ReifenservicePage({ onNavigate }: ReifenservicePageProps
             Reifenservice
           </h1>
           <p className="text-lg md:text-xl max-w-3xl mx-auto opacity-95">
-            Von der Beratung über den Verkauf bis zur Einlagerung – 
+            Von der Beratung über den Verkauf
             bei uns bekommst du den kompletten Reifenservice aus einer Hand.
           </p>
         </div>
@@ -123,39 +118,6 @@ export default function ReifenservicePage({ onNavigate }: ReifenservicePageProps
                 <span>{feature}</span>
               </div>
             ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="bg-accent text-accent-foreground py-16 md:py-24">
-        <div className="container mx-auto px-4 md:px-8 lg:px-16">
-          <div className="max-w-3xl mx-auto">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Reifeneinlagerung – bequem und sicher
-            </h2>
-            <p className="text-lg mb-8 opacity-95">
-              Kein Platz in der Garage? Kein Problem! Wir lagern deine Sommer- oder Winterreifen 
-              fachgerecht in unserem klimatisierten Lager. Bei jedem Reifenkauf ist die erste Saison 
-              Einlagerung kostenlos!
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4">
-              <Button
-                size="lg"
-                variant="secondary"
-                className="gap-2"
-                onClick={() => onNavigate('kontakt')}
-              >
-                Jetzt anfragen
-              </Button>
-              <Button
-                size="lg"
-                variant="outline"
-                className="gap-2 bg-accent-foreground text-accent hover:bg-accent-foreground/90"
-                onClick={() => window.location.href = 'tel:+49123456789'}
-              >
-                Beratung: +49 123 456789
-              </Button>
-            </div>
           </div>
         </div>
       </section>

@@ -58,11 +58,11 @@ export default function Footer({ onNavigate }: FooterProps) {
             <h4 className="font-semibold mb-4">Kontakt</h4>
             <div className="flex flex-col gap-3">
               <a
-                href="tel:+49123456789"
+                href="tel:+4972318002999"
                 className="flex items-center gap-2 text-sm opacity-90 hover:opacity-100 transition-opacity"
               >
                 <Phone size={18} />
-                +49 123 456789
+                +49 7231 8002999
               </a>
               <a
                 href="mailto:info@varitec.de"
@@ -74,9 +74,9 @@ export default function Footer({ onNavigate }: FooterProps) {
               <div className="flex items-start gap-2 text-sm opacity-90">
                 <MapPin size={18} className="mt-0.5" />
                 <span>
-                  Musterstraße 123
+                  Turnstraße 32/1
                   <br />
-                  12345 Musterstadt
+                  75228 Ispringen
                 </span>
               </div>
             </div>
@@ -85,12 +85,9 @@ export default function Footer({ onNavigate }: FooterProps) {
           <div>
             <h4 className="font-semibold mb-4">Öffnungszeiten</h4>
             <div className="flex items-start gap-2 text-sm opacity-90">
-              <Clock size={18} className="mt-0.5" />
-              <div>
-                <p>Mo - Fr: 08:00 - 18:00</p>
-                <p>Sa: 09:00 - 13:00</p>
-                <p>So: Geschlossen</p>
-              </div>
+              <p>Montag - Donnerstag: 07:30 bis 12:00 und 13:00 bis 17:30</p>
+              <p>Freitag: 07:30 bis 12:00 und 13:00 bis 17:00</p>
+              <p>Samstag: Nach Vereinbarung</p>
             </div>
           </div>
         </div>

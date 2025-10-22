@@ -259,7 +259,7 @@ export default function HomePage({ onNavigate }: HomePageProps) {
               size="lg"
               variant="outline"
               className="gap-2 bg-accent-foreground text-accent hover:bg-accent-foreground/90"
-              onClick={() => window.location.href = 'tel:+49123456789'}
+              onClick={() => window.location.href = 'tel:+4972318002999'}
             >
               <Phone size={24} weight="bold" />
               Jetzt anrufen

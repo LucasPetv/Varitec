@@ -1,10 +1,13 @@
+import logoVaritec from '@/assets/logo_varitec.jpg'
+
 export default function DatenschutzPage() {
   return (
     <div>
       <section className="bg-primary text-primary-foreground py-16 md:py-24">
         <div className="container mx-auto px-4 md:px-8 lg:px-16 text-center">
+          <img src={logoVaritec} alt="Varitec Logo" className="mx-auto mb-6 w-32 h-auto rounded-lg shadow-md" />
           <h1 className="text-4xl md:text-5xl font-bold mb-6 tracking-tight">
-            Datenschutzerklärung
+            Datenschutz
           </h1>
         </div>
       </section>
@@ -82,9 +85,9 @@ export default function DatenschutzPage() {
             </p>
             <p className="mb-6">
               Varitec Kfz-Werkstatt GmbH<br />
-              Musterstraße 123<br />
-              12345 Musterstadt<br />
-              Telefon: +49 123 456789<br />
+              Turnstraße 32/1<br />
+              75228 Ispringen<br />
+              Telefon: +49 7231 8002999<br />
               E-Mail: info@varitec.de
             </p>
 
@@ -143,7 +146,7 @@ export default function DatenschutzPage() {
             </p>
             <p className="mb-6">
               E-Mail: datenschutz@varitec.de<br />
-              Telefon: +49 123 456789
+              Telefon: +49 7231 8002999
             </p>
 
             <p className="text-sm text-muted-foreground mt-8">
