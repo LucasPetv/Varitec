@@ -23,7 +23,7 @@ export default function HomePage({ onNavigate }: HomePageProps) {
       id: '1',
       name: 'Michael Schmidt',
       rating: 5,
-      text: 'Sehr kompetente Beratung und faire Preise. Die Inspektion wurde schnell und gründlich durchgeführt. Immer wieder gerne!',
+      text: 'Sehr kompetente Beratung und faire Preise. Die Inspektion wurde schnell und unkompliziert durchgeführt. Immer wieder gerne!',
       date: '2024-01-15'
     },
     {
@@ -31,14 +31,14 @@ export default function HomePage({ onNavigate }: HomePageProps) {
       name: 'Sarah Weber',
       rating: 5,
       text: 'Super freundliches Team! TÜV ohne Probleme bestanden. Die Online-Terminbuchung ist super praktisch.',
-      date: '2024-01-10'
+      date: '2025-03-10'
     },
     {
       id: '3',
-      name: 'Thomas Müller',
+      name: 'Manuel Müller',
       rating: 5,
       text: 'Beste Werkstatt in der Region. Ehrliche Beratung und top Service. Fühle mich hier sehr gut aufgehoben.',
-      date: '2024-01-05'
+      date: '2024-11-05'
     }
   ]
 
@@ -46,7 +46,7 @@ export default function HomePage({ onNavigate }: HomePageProps) {
     {
       icon: CheckCircle,
       title: 'Zertifizierte Qualität',
-      description: 'TÜV- und DEKRA-Partner mit modernster Technik'
+      description: 'TÜV-Partner mit modernster Technik'
     },
     {
       icon: CheckCircle,

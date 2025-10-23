@@ -21,17 +21,6 @@ export default function TUVTerminPage() {
   const [licensePlate, setLicensePlate] = useState('')
   const [isSubmitting, setIsSubmitting] = useState(false)
 
-  const timeSlots = [
-    '08:00',
-    '09:00',
-    '10:00',
-    '11:00',
-    '12:00',
-    '14:00',
-    '15:00',
-    '16:00',
-    '17:00'
-  ]
 
   const vehicleTypes = [
     'PKW',
@@ -164,7 +153,7 @@ export default function TUVTerminPage() {
                             type="text"
                             value={customerName}
                             onChange={(e) => setCustomerName(e.target.value)}
-                            placeholder="Max Mustermann"
+                            placeholder=""
                             className="mt-2"
                             required
                           />
@@ -177,7 +166,7 @@ export default function TUVTerminPage() {
                             type="email"
                             value={email}
                             onChange={(e) => setEmail(e.target.value)}
-                            placeholder="max@example.com"
+                            placeholder=""
                             className="mt-2"
                             required
                           />
@@ -190,7 +179,7 @@ export default function TUVTerminPage() {
                             type="tel"
                             value={phone}
                             onChange={(e) => setPhone(e.target.value)}
-                            placeholder="+49 7231 8002999"
+                            placeholder=""
                             className="mt-2"
                           />
                         </div>
@@ -202,7 +191,7 @@ export default function TUVTerminPage() {
                             type="text"
                             value={licensePlate}
                             onChange={(e) => setLicensePlate(e.target.value.toUpperCase())}
-                            placeholder="B-AB 1234"
+                            placeholder="PF-AB 1234"
                             className="mt-2"
                             required
                           />
@@ -235,27 +224,15 @@ export default function TUVTerminPage() {
                 </CardHeader>
                 <CardContent className="space-y-4">
                   <div>
-                    <h4 className="font-semibold mb-2">📅 Terminvergabe</h4>
+                    <h4 className="font-semibold mb-2">Terminvergabe</h4>
                     <p className="text-sm text-muted-foreground">
-                      Termine sind von Montag bis Samstag verfügbar. Sonntags haben wir geschlossen.
+                      Termine sind von Montag bis Freitag verfügbar.
                     </p>
                   </div>
                   <div>
-                    <h4 className="font-semibold mb-2">⏱️ Dauer</h4>
+                    <h4 className="font-semibold mb-2">Dauer</h4>
                     <p className="text-sm text-muted-foreground">
                       Die TÜV-Untersuchung dauert in der Regel 30-60 Minuten.
-                    </p>
-                  </div>
-                  <div>
-                    <h4 className="font-semibold mb-2">📋 Dokumente</h4>
-                    <p className="text-sm text-muted-foreground">
-                      Bitte bringe Fahrzeugschein und den letzten TÜV-Bericht mit.
-                    </p>
-                  </div>
-                  <div>
-                    <h4 className="font-semibold mb-2">💶 Kosten</h4>
-                    <p className="text-sm text-muted-foreground">
-                      Die Kosten variieren je nach Fahrzeugtyp. Wir informieren dich vor Ort.
                     </p>
                   </div>
                 </CardContent>

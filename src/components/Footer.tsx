@@ -1,5 +1,5 @@
 import { Phone, Envelope, MapPin, Clock } from '@phosphor-icons/react'
-
+import logoVaritec from '@/assets/images.jpeg'
 type Page = 'home' | 'leistungen' | 'tuv-termin' | 'team' | 'kontakt' | 'reifenservice' | 'hu-au' | 'impressum' | 'datenschutz'
 
 interface FooterProps {
@@ -17,7 +17,7 @@ export default function Footer({ onNavigate }: FooterProps) {
       <div className="container mx-auto px-4 md:px-8 lg:px-16 py-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           <div>
-            <h3 className="text-xl font-bold mb-4">Varitec</h3>
+            <img src={logoVaritec} alt="Varitec Logo" className="mx-auto mb-6 h-auto shadow-md" />
             <p className="text-sm opacity-90">
               Deine kompetente Kfz-Werkstatt für alle Services rund ums Auto.
               Qualität und Kundenzufriedenheit stehen bei uns an erster Stelle.
@@ -69,7 +69,7 @@ export default function Footer({ onNavigate }: FooterProps) {
                 className="flex items-center gap-2 text-sm opacity-90 hover:opacity-100 transition-opacity"
               >
                 <Envelope size={18} />
-                info@varitec.de
+                info@varitec-kfz.de
               </a>
               <div className="flex items-start gap-2 text-sm opacity-90">
                 <MapPin size={18} className="mt-0.5" />
@@ -85,9 +85,9 @@ export default function Footer({ onNavigate }: FooterProps) {
           <div>
             <h4 className="font-semibold mb-4">Öffnungszeiten</h4>
             <div className="flex items-start gap-2 text-sm opacity-90">
-              <p>Montag - Donnerstag: 07:30 bis 12:00 und 13:00 bis 17:30</p>
-              <p>Freitag: 07:30 bis 12:00 und 13:00 bis 17:00</p>
-              <p>Samstag: Nach Vereinbarung</p>
+              <p>Mo - Do: 07:30 bis 12:00 und 13:00 bis 17:30</p>
+              <p>Fr: 07:30 bis 12:00 und 13:00 bis 17:00</p>
+              <p>Sa: Nach Vereinbarung</p>
             </div>
           </div>
         </div>
