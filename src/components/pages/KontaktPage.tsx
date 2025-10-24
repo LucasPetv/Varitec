@@ -158,7 +158,7 @@ export default function KontaktPage() {
                         href="tel:+4972318002999"
                         className="text-accent hover:underline"
                       >
-                        +0 7231 8002999
+                        +49 7231 8002999
                       </a>
                     </div>
                   </div>
@@ -180,7 +180,7 @@ export default function KontaktPage() {
 
                   <div className="flex items-start gap-4">
                     <div className="w-10 h-10 bg-accent/10 rounded-lg flex items-center justify-center flex-shrink-0">
-                      <img src={logoVaritec} alt="Varitec Logo" className="w-8 h-8 object-contain" />
+                      <MapPin size={24} className="text-accent" weight="bold" />
                     </div>
                     <div>
                       <h4 className="font-semibold mb-1">Adresse</h4>

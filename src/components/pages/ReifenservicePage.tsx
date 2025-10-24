@@ -39,12 +39,12 @@ export default function ReifenservicePage({ onNavigate }: ReifenservicePageProps
   ]
 
   const features = [
-    'Kostenloser Reifencheck',
+    'Reifencheck',
     'Profiltiefenmessung',
     'Luftdruckkontrolle',
     'RDKS-Service (Reifendruckkontrollsystem)',
     'Felgen-Reparatur',
-    'Reifenentsorgung'
+    'Altreifenentsorgung'
   ]
 
   return (

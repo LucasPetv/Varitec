@@ -65,7 +65,7 @@ export default function Footer({ onNavigate }: FooterProps) {
                 +49 7231 8002999
               </a>
               <a
-                href="mailto:info@varitec.de"
+                href="mailto:info@varitec-kfz.de"
                 className="flex items-center gap-2 text-sm opacity-90 hover:opacity-100 transition-opacity"
               >
                 <Envelope size={18} />
