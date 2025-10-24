@@ -84,10 +84,27 @@ export default function Footer({ onNavigate }: FooterProps) {
 
           <div>
             <h4 className="font-semibold mb-4">Öffnungszeiten</h4>
-            <div className="flex items-start gap-2 text-sm opacity-90">
-              <p>Mo - Do: 07:30 bis 12:00 und 13:00 bis 17:30</p>
-              <p>Fr: 07:30 bis 12:00 und 13:00 bis 17:00</p>
-              <p>Sa: Nach Vereinbarung</p>
+            <div className="flex flex-col gap-1">
+              <div className="flex items-center gap-2">
+                <Clock size={18} className="text-accent" />
+                <span className="font-semibold">Montag - Donnerstag:</span>
+                <span>07:30 – 12:00 & 13:00 – 17:30</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <Clock size={18} className="text-accent" />
+                <span className="font-semibold">Freitag:</span>
+                <span>07:30 – 12:00 & 13:00 – 17:00</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <Clock size={18} className="text-accent" />
+                <span className="font-semibold">Samstag:</span>
+                <span>Nach Vereinbarung</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <Clock size={18} className="text-accent" />
+                <span className="font-semibold">Sonntag:</span>
+                <span>Geschlossen</span>
+              </div>
             </div>
           </div>
         </div>

@@ -24,17 +24,14 @@ export default function ReifenservicePage({ onNavigate }: ReifenservicePageProps
     {
       title: 'Reifenwechsel',
       description: 'Professioneller Wechsel von Sommer- auf Winterreifen und umgekehrt',
-      price: 'ab 29,90 €'
     },
     {
       title: 'Reifenmontage',
       description: 'Montage neuer Reifen auf deine Felgen inklusive Auswuchten',
-      price: 'ab 49,90 €'
     },
     {
       title: 'Reifenverkauf',
       description: 'Große Auswahl an Markenreifen zu fairen Preisen',
-      price: 'auf Anfrage'
     }
   ]
 
@@ -73,7 +70,6 @@ export default function ReifenservicePage({ onNavigate }: ReifenservicePageProps
                 <CardContent className="p-6">
                   <h3 className="text-xl font-semibold mb-2">{service.title}</h3>
                   <p className="text-muted-foreground mb-4">{service.description}</p>
-                  <p className="text-accent font-semibold">{service.price}</p>
                 </CardContent>
               </Card>
             ))}

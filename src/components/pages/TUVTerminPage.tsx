@@ -13,7 +13,6 @@ import { TUVAppointment } from '@/types'
 export default function TUVTerminPage() {
   const [appointments, setAppointments] = useKV<TUVAppointment[]>('tuv-appointments', [])
   const [date, setDate] = useState<Date>()
-  const [time, setTime] = useState('')
   const [vehicleType, setVehicleType] = useState('')
   const [customerName, setCustomerName] = useState('')
   const [email, setEmail] = useState('')
@@ -32,7 +31,7 @@ export default function TUVTerminPage() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
 
-    if (!date || !time || !vehicleType || !customerName || !email || !licensePlate) {
+    if (!date || !vehicleType || !customerName || !email || !licensePlate) {
       toast.error('Bitte fülle alle Pflichtfelder aus')
       return
     }
@@ -42,7 +41,7 @@ export default function TUVTerminPage() {
     const newAppointment: TUVAppointment = {
       id: Date.now().toString(),
       date: date.toISOString(),
-      time,
+      time: '', // Uhrzeit bleibt leer
       vehicleType,
       customerName,
       email,
@@ -57,7 +56,6 @@ export default function TUVTerminPage() {
     })
 
     setDate(undefined)
-    setTime('')
     setVehicleType('')
     setCustomerName('')
     setEmail('')
@@ -106,20 +104,6 @@ export default function TUVTerminPage() {
                         type="date"
                         value={date ? date.toISOString().substring(0, 10) : ''}
                         onChange={(e) => setDate(new Date(e.target.value))}
-                        className="mt-2"
-                        required
-                      />
-                    </div>
-
-                    <div>
-                      <Label htmlFor="time" className="text-base font-semibold">
-                        Wunschuhrzeit *
-                      </Label>
-                      <Input
-                        id="time"
-                        type="time"
-                        value={time}
-                        onChange={(e) => setTime(e.target.value)}
                         className="mt-2"
                         required
                       />

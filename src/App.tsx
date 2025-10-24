@@ -11,8 +11,10 @@ import ReifenservicePage from '@/components/pages/ReifenservicePage'
 import HUAUPage from '@/components/pages/HUAUPage'
 import ImpressumPage from '@/components/pages/ImpressumPage'
 import DatenschutzPage from '@/components/pages/DatenschutzPage'
+import WerkstattPage from '@/components/pages/WerkstattPage'
+import TUVAdminPage from '@/components/pages/TUVAdminPage'
 
-type Page = 'home' | 'leistungen' | 'tuv-termin' | 'team' | 'kontakt' | 'reifenservice' | 'hu-au' | 'impressum' | 'datenschutz'
+type Page = 'home' | 'leistungen' | 'tuv-termin' | 'team' | 'kontakt' | 'reifenservice' | 'hu-au' | 'impressum' | 'datenschutz' | 'werkstatt' | 'tuv-admin'
 
 function App() {
   const [currentPage, setCurrentPage] = useState<Page>('home')
@@ -37,9 +39,19 @@ function App() {
         return <ImpressumPage />
       case 'datenschutz':
         return <DatenschutzPage />
+      case 'werkstatt':
+        return <WerkstattPage />
+      case 'tuv-admin':
+        return <TUVAdminPage />
       default:
         return <HomePage onNavigate={setCurrentPage} />
     }
+  }
+
+  // Spezialfall: Admin-Panel über URL-Parameter anzeigen
+  const isAdmin = typeof window !== 'undefined' && window.location.search.includes('admin=1')
+  if (isAdmin) {
+    return <TUVAdminPage />
   }
 
   return (
