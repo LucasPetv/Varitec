@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { addDays, eachDayOfInterval, format, isWithinInterval, parseISO } from 'date-fns'
 
-const ADMIN_PASSWORD = 'varitec2025'
+const ADMIN_PASSWORD = '1'
 
 function getBlockedDates(): string[] {
   try {
@@ -30,6 +30,12 @@ export default function TUVAdminPage() {
   const [viewMonth, setViewMonth] = useState(today.getMonth())
   const [viewYear, setViewYear] = useState(today.getFullYear())
 
+  const months = [
+    'Januar', 'Februar', 'März', 'April', 'Mai', 'Juni',
+    'Juli', 'August', 'September', 'Oktober', 'November', 'Dezember'
+  ]
+  const years = Array.from({ length: 11 }, (_, i) => today.getFullYear() - 5 + i)
+
   const handleLogin = (e: React.FormEvent) => {
     e.preventDefault()
     if (password === ADMIN_PASSWORD) {
@@ -40,16 +46,29 @@ export default function TUVAdminPage() {
     }
   }
 
+  // Bereichsauswahl-Logik anpassen
   const handleDayClick = (date: Date) => {
     const iso = format(date, 'yyyy-MM-dd')
     if (!range) {
-      setRange({ start: iso, end: iso })
+      setRange({ start: iso, end: '' })
     } else if (range && range.start && !range.end) {
-      setRange({ start: range.start, end: iso })
+      if (iso < range.start) {
+        setRange({ start: iso, end: range.start })
+      } else if (iso === range.start) {
+        setRange({ start: iso, end: iso })
+      } else {
+        setRange({ start: range.start, end: iso })
+      }
     } else {
-      setRange({ start: iso, end: iso })
+      setRange({ start: iso, end: '' })
     }
   }
+
+  // Bereich blockieren nur aktivieren, wenn Start und End gesetzt und unterschiedlich
+  const isBlockRangeEnabled = range && range.start && range.end && range.start !== range.end
+
+  // Einzelnen Tag blockieren, wenn nur ein Tag gewählt ist
+  const isSingleDay = range && range.start && (!range.end || range.start === range.end)
 
   const handleBlockRange = () => {
     if (!range) return
@@ -57,6 +76,14 @@ export default function TUVAdminPage() {
     const end = parseISO(range.end)
     const days = eachDayOfInterval({ start, end })
     const newBlocked = Array.from(new Set([...blocked, ...days.map(d => format(d, 'yyyy-MM-dd'))]))
+    setBlocked(newBlocked)
+    setBlockedDates(newBlocked)
+    setRange(null)
+  }
+
+  const handleBlockSingle = () => {
+    if (!range || !range.start) return
+    const newBlocked = Array.from(new Set([...blocked, range.start]))
     setBlocked(newBlocked)
     setBlockedDates(newBlocked)
     setRange(null)
@@ -119,7 +146,24 @@ export default function TUVAdminPage() {
           }}
           className="px-2 py-1 rounded bg-muted"
         >&lt;</button>
-        <span className="font-semibold text-lg">{today.toLocaleString('de-DE', { month: 'long' })} {viewYear}</span>
+        <select
+          value={viewMonth}
+          onChange={e => setViewMonth(Number(e.target.value))}
+          className="font-semibold text-lg bg-transparent outline-none"
+        >
+          {months.map((m, idx) => (
+            <option key={m} value={idx}>{m}</option>
+          ))}
+        </select>
+        <select
+          value={viewYear}
+          onChange={e => setViewYear(Number(e.target.value))}
+          className="font-semibold text-lg bg-transparent outline-none"
+        >
+          {years.map(y => (
+            <option key={y} value={y}>{y}</option>
+          ))}
+        </select>
         <button
           onClick={() => {
             if (viewMonth === 11) {
@@ -155,9 +199,16 @@ export default function TUVAdminPage() {
       </div>
       <div className="flex gap-2 mb-6">
         <button
+          onClick={handleBlockSingle}
+          className="bg-accent text-white rounded px-4 py-2 font-semibold disabled:opacity-50"
+          disabled={!isSingleDay}
+        >
+          Tag blockieren
+        </button>
+        <button
           onClick={handleBlockRange}
           className="bg-accent text-white rounded px-4 py-2 font-semibold disabled:opacity-50"
-          disabled={!range || !range.start || !range.end}
+          disabled={!isBlockRangeEnabled}
         >
           Bereich blockieren
         </button>

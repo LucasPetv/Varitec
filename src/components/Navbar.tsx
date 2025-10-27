@@ -18,7 +18,6 @@ export default function Navbar({ currentPage, onNavigate }: NavbarProps) {
     { id: 'tuv-termin' as Page, label: 'TÜV-Termin' },
     { id: 'hu-au' as Page, label: 'HU/AU' },
     { id: 'kontakt' as Page, label: 'Kontakt' },
-    { id: 'tuv-admin' as Page, label: 'Admin' },
   ]
   const extraMenuItems = [
     { id: 'leistungen' as Page, label: 'Leistungen' },
